@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  halo:
+    image: halohub/halo:latest
+    restart: always
+    ports:
+      - "8090:8090"
+    volumes:
+      - halo-data:/root/.halo2
+    environment:
+      - JVM_OPTS=-Xms256m -Xmx512m
+
+volumes:
+  halo-data:
